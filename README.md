@@ -1,6 +1,6 @@
 # UFOs
 ## Project Overview
-The main goal of this project was to develope a dynamic webpage which allows users to manually filter a dataset of UFO sigthings stored as a JavaScript obejct. The webpage was constructed using HTML with CSS and Bootstrap components for added aesthetics. The Webpage displays the data from data.js as a table and contains filters that allow the user to refine a search. The filters were constructed using Javascript in the file app.js. 
+The main goal of this project was to develop a dynamic webpage which allows users to manually filter a dataset of UFO sightings stored as a JavaScript object. The webpage was constructed using HTML with CSS and Bootstrap components for added aesthetics. The Webpage displays the data from data.js as a table and contains filters that allow the user to refine a search. The filters were constructed using JavaScript in the file app.js. 
 
 ### Resources:
 Software : HTML, Bootstrap, CSS, JavaScript D3
@@ -41,7 +41,7 @@ function buildTable(data) {
 
 ![png](/screenshots/unfiltered.png)
 
-#### If the user enters invalid data or there are no reults matching the criteria, the table will display no data as seen below. The search criteria were date: 1/12/2010 and the state : nv. This does not match any of the records and so no data is displayed.
+#### If the user enters invalid data or there are no results matching the criteria, the table will display no data as seen below. The search criteria were date: 1/12/2010 and the state : nv. This does not match any of the records and so no data is displayed.
 
 ![png](/screenshots/no_results.png)
 
@@ -77,7 +77,7 @@ function buildTable(data) {
 
 #### How the filter works:
 
-The following code retirieves the element that was changed in the filters, saves the value and id and applies those filters to the data. The code then rewrites the table using the filtered dataset.
+The following code retrieves the element that was changed in the filters, saves the value and id and applies those filters to the data. The code then rewrites the table using the filtered dataset.
 ```javascript
 // 1. Create a variable to keep track of all the filters as an object.
 var filters = {};
@@ -148,4 +148,8 @@ d3.selectAll("#shape").on("change", updateFilters);
 ```
 ## Summary
 
-1. 
+- One drawback of the webpage is that there is no user input validation. The user must enter in the filter criteria as formatted in the table. Another drawback is that the filters only allow for one input at a time. So users cannot filter a date range nor can they filter for two shapes or two cities at the same time.
+
+- Two additional recommendations for further development:
+1. Add in a user input validation step. Starting with reformatting any kind of date, taking in to account any case corrections for the city, state, country and shape filters. One possible work around to having to script in the validation steps is providing the user with a drop-down menu of all possible selections for the filter rather than having them type it in themselves.
+2. Add in a date range filter and add the ability to filter using two or more selections for the city, state, or shape inputs. 
